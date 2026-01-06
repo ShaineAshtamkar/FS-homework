@@ -1,0 +1,38 @@
+.container {
+    font-size: 0;
+    /* removes small gaps if using inline-block */
+}
+
+.left,
+.right {
+    display: inline-block;
+    height: 180px;
+    vertical-align: top;
+}
+
+.left {
+    background: pink;
+    width: calc(100% - 20px);
+}
+
+.right {
+    background: #f27c7c;
+    width: 20px;
+}
+
+.ex2-container {
+    font-size: 0;
+    /* kills the inline-block whitespace gap */
+}
+
+.box {
+    display: inline-block;
+    width: calc(100% / 3);
+    height: 120px;
+    background: pink;
+    border: 3px solid black;
+    box-sizing: border-box;
+    font-size: 16px;
+    /* restore text size if needed */
+    vertical-align: top;
+}
