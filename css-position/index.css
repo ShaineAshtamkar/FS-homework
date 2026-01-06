@@ -1,0 +1,81 @@
+.image-box {
+    position: relative;
+    margin: 0 auto;
+    width: min(500px, 90%);
+}
+
+
+.corner {
+    position: absolute;
+
+}
+
+.image-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+
+.top-left {
+    bottom: 130px;
+    left: 0px;
+}
+
+.top-right {
+    bottom: 130px;
+    left: 230px;
+}
+
+.bottom-left {
+    bottom: 9px;
+    left: 0px;
+}
+
+.bottom-right {
+    bottom: 9px;
+    left: 210px;
+}
+
+
+
+
+
+.blue-box {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    position: relative;
+}
+
+/* make this wrapper fill the blue box */
+.red-stripes {
+    position: absolute;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0 */
+}
+
+/* vertical stripe */
+.red-stripes .vertical {
+    position: absolute;
+    width: 25px;
+    /* stripe thickness */
+    height: 100%;
+    background: red;
+    left: 25px;
+    /* distance from left */
+    top: 0;
+}
+
+/* horizontal stripe */
+.red-stripes .horizontal {
+    position: absolute;
+    height: 25px;
+    /* stripe thickness */
+    width: 100%;
+    background: red;
+    top: 25px;
+    /* distance from top */
+    left: 0;
+}
