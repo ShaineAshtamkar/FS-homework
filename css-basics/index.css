@@ -1,0 +1,283 @@
+#top {
+
+    text-align: center;
+    text-decoration: underline;
+    font-size: 40px;
+    margin: 0 0px 30px;
+    font-weight: 700;
+}
+
+.psection {
+    margin: 25px 0;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #2d3b52;
+}
+
+.psection h2 {
+    color: #2f86d6;
+    font-size: 28px;
+    margin: 0 0 10px;
+    font-weight: 700;
+    border-bottom: 2px solid #2f86d6;
+    padding-bottom: 6px;
+}
+
+.psection strong {
+    color: #8e44ad;
+    font-weight: 700;
+}
+
+.psection em {
+    color: #2ecc71;
+    font-style: italic;
+}
+
+.fav-things-section {
+    background-color: #FFF9DB;
+    padding: 30px 40px;
+    margin-top: 40px;
+}
+
+.fav-title {
+    text-align: center;
+    color: #ff6b3d;
+    font-size: 46px;
+    margin: 0 0 25px;
+    font-weight: 800;
+
+
+}
+
+.fav-subtitle {
+    background-color: #d8eefc;
+    color: #2f86d6;
+    padding: 10px 14px;
+    border-left: 5px solid #2f86d6;
+    margin: 22px 0 8px;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.fav-box {
+    background-color: #eef1f4;
+    padding: 18px 22px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+}
+
+.foods>li>strong,
+.hobbies>li>strong {
+    color: #e74c3c;
+
+}
+
+/* Section headings: My Projects / Contact */
+
+.portfolio h1 {
+    text-align: center;
+    color: #f39c12;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+}
+
+/* Section headings: My Projects / Contact */
+
+.portfolio h2 {
+    color: #e74c3c;
+    margin-top: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e74c3c;
+
+
+}
+
+/* Project titles (h3) */
+.portfolio h3 {
+    color: #3da9fc;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+
+/* Description label coloring inside <p> */
+.portfolio p strong {
+    color: #f1c40f;
+
+}
+
+.portfolio a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.portfolio {
+    margin: 0;
+    background: #2f3f52;
+    color: #e8edf3;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px 40px;
+}
+
+
+/* table */
+
+.table-wrap {
+    background: #1b1b1b;
+    padding: 28px 32px;
+    margin: 40px 0;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Big green title */
+.table-title {
+    text-align: center;
+    color: #00ff88;
+    font-size: 42px;
+    margin: 0 0 8px;
+    text-decoration: underline;
+    font-weight: 800;
+}
+
+/* Yellow subtitle */
+.table-subtitle {
+    text-align: center;
+    color: #f1c40f;
+    margin: 0 0 18px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Table frame */
+.neon-table {
+    width: 100%;
+    border: 2px solid #00ff88;
+    /* green outline */
+    border-collapse: collapse;
+    background: #2a2a2a;
+}
+
+/* Header row */
+.neon-table th {
+    color: #00ff88;
+    padding: 12px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-weight: 800;
+    text-align: center;
+}
+
+/* Body cells */
+.neon-table td {
+    padding: 12px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    color: #d7d7d7;
+}
+
+/* Make Language names orange */
+.neon-table .lang {
+    color: #f39c12;
+    font-weight: 800;
+}
+
+/* Caption at bottom (note) */
+.table-note {
+    caption-side: bottom;
+    padding-top: 12px;
+    color: #bfbfbf;
+    font-style: italic;
+    text-align: left;
+}
+
+/* Contact form */
+
+/* Page background like the example */
+.form-card body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6fb;
+    color: #222;
+}
+
+/* Title */
+.form-card h2 {
+    text-align: center;
+    color: #2d8bd3;
+    font-size: 44px;
+    margin: 35px 0 20px;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+/* Fieldset look */
+fieldset {
+    border: 2px solid #2d8bd3;
+    border-radius: 6px;
+    padding: 18px 18px 12px;
+    background: #eef3f8;
+    margin: 18px 0;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: 800;
+    color: #2d8bd3;
+    font-size: 18px;
+    background: #eef3f8;
+    /* makes it look like it “cuts” the border */
+
+}
+
+label {
+    display: inline-block;
+    width: 90px;
+    /* makes Name/Email line up */
+    font-weight: 700;
+    color: #2b3d52;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 280px;
+    max-width: 100%;
+    padding: 8px 10px;
+    border: 2px solid #c8d1dc;
+    border-radius: 4px;
+    outline: none;
+    background: #fff;
+}
+
+/* Radio/checkbox spacing */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 6px;
+
+}
+
+/* Buttons row */
+button {
+    border: 0;
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: 800;
+    color: white;
+    border-radius: 6px;
+    margin-right: 12px;
+}
+
+
+/* Submit = green */
+button[type="submit"] {
+    background: #28a745;
+}
+
+/* Reset = red */
+button[type="reset"] {
+    background: #e74c3c;
+}

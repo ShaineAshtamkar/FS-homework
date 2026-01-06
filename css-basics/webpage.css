@@ -1,0 +1,190 @@
+.hello1 {
+    font-size: larger;
+    color: rgb(25, 213, 8);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800
+}
+
+.hello2 {
+    font-size: medium;
+    color: pink;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+}
+
+.hello3 {
+    font-size: smaller;
+    color: blue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 300;
+}
+
+.bookmark-container {
+    background-color: white;
+    margin: 0;
+    display: inline-block;
+    width: 60px;
+    border-radius: 6px;
+    font-size: medium;
+    text-decoration: none;
+    text-align: center;
+}
+
+#container {
+    background-color: #b4b8bf;
+    display: inline-block;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.65);
+
+}
+
+.box {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #000;
+    margin-right: 6px;
+    display: inline-block;
+
+}
+
+#first {
+    background-color: #18c3a2;
+}
+
+
+#second {
+    background-color: #e67e22;
+}
+
+.button {
+    background-color: #66FF00;
+
+}
+
+
+table {
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    /* removes gaps between cells */
+
+}
+
+thead th {
+    background-color: grey;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    border: none;
+
+
+}
+
+tbody {
+    background-color: #c6f6c7;
+}
+
+tbody td:nth-child(2) {
+    font-weight: bold;
+}
+
+.cover-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+}
+
+.transparent-title {
+    opacity: 40%;
+}
+
+.solid-title {
+    background-color: purple;
+    display: inline-block;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 40px 60px;
+    color: #222;
+}
+
+
+
+
+/* table */
+
+.table-wrap {
+    background: #1b1b1b;
+    padding: 28px 32px;
+    margin: 40px 0;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Big green title */
+.table-title {
+    text-align: center;
+    color: #00ff88;
+    font-size: 42px;
+    margin: 0 0 8px;
+    text-decoration: underline;
+    font-weight: 800;
+}
+
+/* Yellow subtitle */
+.table-subtitle {
+    text-align: center;
+    color: #f1c40f;
+    margin: 0 0 18px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Table frame */
+.neon-table {
+    width: 100%;
+    border: 2px solid #00ff88;
+    /* green outline */
+    border-collapse: collapse;
+    background: #2a2a2a;
+}
+
+/* Header row */
+.neon-table th {
+    color: #00ff88;
+    padding: 12px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-weight: 800;
+    text-align: center;
+}
+
+/* Body cells */
+.neon-table td {
+    padding: 12px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    color: #d7d7d7;
+}
+
+/* Make Language names orange like screenshot */
+.neon-table .lang {
+    color: #f39c12;
+    font-weight: 800;
+}
+
+/* Caption at bottom (note) */
+.table-note {
+    caption-side: bottom;
+    padding-top: 12px;
+    color: #bfbfbf;
+    font-style: italic;
+    text-align: left;
+}
