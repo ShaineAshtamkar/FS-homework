@@ -7,42 +7,36 @@
 
 .corner {
     position: absolute;
-
 }
 
 .image-box img {
     max-width: 100%;
     height: auto;
-    display: block;
+
+
 
 }
 
 
-.top-left {
+.corner.top-left {
     bottom: 130px;
     left: 0px;
 }
 
-.top-right {
+.corner.top-right {
     bottom: 130px;
     left: 230px;
 }
 
-.bottom-left {
+.corner.bottom-left {
     bottom: 9px;
     left: 0px;
 }
 
-.bottom-right {
+.corner.bottom-right {
     bottom: 9px;
     left: 210px;
 }
-
-.lower {}
-
-
-
-
 
 
 .blue-box {
@@ -56,8 +50,13 @@
 .red-stripes {
     position: absolute;
     inset: 0;
-    /* top:0; right:0; bottom:0; left:0 */
+
+
 }
+
+/* top:0; right:0; bottom:0; left:0 
+    this fills the entire blue box
+    * /
 
 /* vertical stripe */
 .red-stripes .vertical {
@@ -68,7 +67,8 @@
     background: red;
     left: 25px;
     /* distance from left */
-    top: 0;
+    outline: 2px solid yellow;
+
 }
 
 /* horizontal stripe */
@@ -80,5 +80,71 @@
     background: red;
     top: 25px;
     /* distance from top */
-    left: 0;
+    outline: 2px solid yellow;
+}
+
+/*-----------------------------*/
+
+.background {
+    height: 260px;
+    width: 100%;
+    background-color: #6050DC;
+    position: relative;
+}
+
+.text {
+    margin: 0;
+    position: absolute;
+    font-weight: 700;
+    color: #111;
+
+}
+
+#money {
+    top: 12px;
+    left: 14px;
+}
+
+#time {
+    bottom: 12px;
+    right: 14px;
+}
+
+.bar {
+    position: absolute;
+    bottom: 28px;
+    /* baseline */
+    width: 36px;
+    background-color: #bfc7c7;
+    border-radius: 3px;
+}
+
+#bar-1 {
+    left: 24px;
+    height: 28px;
+}
+
+#bar-2 {
+    left: 78px;
+    height: 120px;
+}
+
+#bar-3 {
+    left: 132px;
+    height: 190px;
+}
+
+#bar-4 {
+    left: 186px;
+    height: 175px;
+}
+
+#bar-5 {
+    left: 240px;
+    height: 140px;
+}
+
+#bar-6 {
+    left: 294px;
+    height: 80px;
 }
