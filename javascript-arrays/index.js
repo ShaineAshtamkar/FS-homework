@@ -474,3 +474,62 @@ let totalPrice = (cartItems, taxRates) => {
 }
 console.log(totalPrice(cartItems, taxRates))
 
+//_________________________________________________________________________________________________
+const people = [
+    { id: 1, name: "Humbert", money: 499, hasAC: false },
+    { id: 2, name: "Bellatrix", money: 499, hasAC: true },
+    { id: 3, name: "Mola", money: 720, hasAC: false }
+]
+
+let isCool = function (humbert) {
+    return (humbert.money > 500 || humbert.hasAC)
+}
+
+let print = (p) => console.log(p)
+
+people.filter(isCool).map(p => p.name).forEach(print)
+
+console.log(people.find(p.id === 2))
+
+// //________________________________________________________________________________________________
+// arr.forEach(x => console.log(x))     // uses x, ignores return
+// arr.map(x => x * 2)                  // returns new array
+// arr.filter(x => x > 3)               // returns new array
+// arr.find(x => x > 3)                 // returns one element
+// arr.some(x => x > 3)                 // returns boolean
+// arr.every(x => x > 3)                // returns boolean
+// arr.reduce((sum, x) => sum + x, 0)   // returns one value
+
+// arr.forEach((x, i, a) => console.log(x))
+// // callback receives: (element x, index i, array a)
+// // return ignored
+
+// arr.map((x, i, a) => x * 2)
+// // callback receives: (element x, index i, array a)
+// // return: NEW value for that position
+// // returns: new array
+
+// arr.filter((x, i, a) => x > 3)
+// // callback receives: (element x, index i, array a)
+// // return: true/false (keep it?)
+// // returns: new array (subset)
+
+// arr.find((x, i, a) => x > 3)
+// // callback receives: (element x, index i, array a)
+// // return: true/false (match?)
+// // returns: first matching element (or undefined)
+
+// arr.some((x, i, a) => x > 3)
+// // callback receives: (element x, index i, array a)
+// // return: true/false
+// // returns: true if ANY element returns true
+
+// arr.every((x, i, a) => x > 3)
+// // callback receives: (element x, index i, array a)
+// // return: true/false
+// // returns: true if ALL elements return true
+
+// arr.reduce((sum, x, i, a) => sum + x, 0)
+// // callback receives: (accumulator sum, element x, index i, array a)
+// // return: new accumulator
+// // returns: one final value

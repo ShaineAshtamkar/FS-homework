@@ -178,3 +178,16 @@ commentOnWeather(30) //returns "It's hot"
 commentOnWeather(22) //returns "It's cold"
 
 //______________________________________________________________________
+let ages = [12, 41, 11, 10, 32, 27, 18, 19, 19, 14, 58, 41, 9]
+
+let olderThan16 = ages.filter(a => a > 16)
+console.log(olderThan16) // prints [41, 32, 27, 18, 19, 19, 58, 41]
+//_____________________________________________________________________
+
+let vegetables = [
+    { name: "Eggplant", color: "purple" },
+    { name: "Carrot", color: "orange" },
+    { name: "Squash", color: "orange" },
+    { name: "Tomatoe", color: "red" },
+    { name: "Onion", color: "white" },
+    { name: "Sweet Potato", color: "orange" }]
