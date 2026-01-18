@@ -95,3 +95,16 @@ letters.add("a");
 letters.add("b");
 letters.add("c");
 console.log(letters)
+
+
+
+function add(num) {
+
+    return add2(num2){
+        sum = num + num2;
+        return sum;
+    }
+
+
+}
+console.log(add(5)(2))
