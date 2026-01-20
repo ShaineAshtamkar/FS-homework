@@ -24,6 +24,9 @@ function validateArgs(command, args) {
             return;
 
         case "delete":
+            if (args.length < 1) {
+                throw new Error("Missing arguments for delete command");
+            }
             return;
 
     }
@@ -40,4 +43,4 @@ function validateContact(name, email, phone) {
     validateEmail(email);
 }
 
-module.exports = { validateCommand, validateArgs, validateContact }
+module.exports = { validateCommand, validateArgs, validateContact, validateEmail }
