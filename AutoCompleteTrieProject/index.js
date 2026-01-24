@@ -1,3 +1,5 @@
+
+
 class AutoCompleteTrie {
     constructor(value = "") {
         this.value = value;
@@ -45,7 +47,14 @@ class AutoCompleteTrie {
     }
 
     _allWordsHelper(prefix, node, allWords) {
-
+        if (node.endOfWord == true) {
+            allWords.push(prefix);
+        }
+        if (!node) {
+            return;
+        }
+        for (let ch in node.children)
+            this._allWordsHelper(prefix + ch, node.children[ch], allWords)
     }
     predictWords(prefix) {
 

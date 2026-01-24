@@ -63,3 +63,36 @@ describe("findWord", () => {
         expect(trie.findWord("run")).toBe(false);
     });
 });
+
+describe("_getRemainingTree", () => {
+    test("returns the node where the prefix ends when prefix exists", () => {
+        const trie = new AutoCompleteTrie();
+        trie.addWord("cat");
+        trie.addWord("car");
+
+        const node = trie._getRemainingTree("ca", trie);
+
+        expect(node).not.toBeNull();
+        expect(node.value).toBe("a"); // prefix 'ca' ends at node 'a'
+    });
+
+    test("returns null when the prefix does not exist", () => {
+        const trie = new AutoCompleteTrie();
+        trie.addWord("cat");
+
+        const node = trie._getRemainingTree("cz", trie);
+        expect(node).toBeNull();
+    });
+
+    test("can start from a non-root node (subtree search)", () => {
+        const trie = new AutoCompleteTrie();
+        trie.addWord("cat");
+
+        const cNode = trie.children["c"];
+        const aNode = trie._getRemainingTree("a", cNode);
+
+        expect(aNode).not.toBeNull();
+        expect(aNode.value).toBe("a");
+    });
+});
+
