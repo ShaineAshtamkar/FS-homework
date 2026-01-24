@@ -1,45 +1,68 @@
 const AutoCompleteTrie = require("./index");
 const ui = require("./ui");
+const promptSync = require("prompt-sync");
+
+const prompt = promptSync();
+const trie = new AutoCompleteTrie();
+
+
+ui.welcome();
+
 
 function run() {
-    let command;
-    try {
-        command = process.argv[2];
-        const args = process.argv.slice(3);
+    while (true) {
+        const line = prompt("> ").trim();
+        if (!line) continue;
 
-        switch (command) {
-            case "add":
-                word = args;
-                addWord(word)
-                break;
+        const parts = line.split(" ");
+        const command = parts[0].toLowerCase();
+        const args = parts.slice(1).join(" ");
+        try {
 
-            case "complete":
-                prefix = args;
-                allWords = predictWords(prefix);
-                ui.printSuggestions(allWords);
-                break;
+            switch (command) {
+                case "add": {
+                    const word = args;
+                    trie.addWord(word);
+                    ui.added(word);
+                    break;
+                }
 
-            case "find":
-                const query = args[0];
+                case "complete": {
+                    const prefix = args;
+                    const allWords = trie.predictWords(prefix);
+                    ui.suggestions(prefix, allWords);
+                    break;
+                }
 
-                break;
+                case "find": {
+                    const word = args;
+                    const isFound = trie.findWord(word);
+                    if (isFound) {
+                        ui.found(word)
+                    } else {
+                        ui.notFound(word);
+                    }
+                    break;
+                }
 
-            case "help":
-                ui.printHelp();
-                break;
+                case "help":
+                    ui.help();
+                    break;
 
-            case "exit":
+                case "exit":
+                    ui.goodbye();
+                    return;
 
-                return;
+
+            }
+        } catch (err) {
+            ui.error(err)
 
 
         }
-    } catch (err) {
-        ui.handleError(err, command);
-        process.exitCode = 1;
 
     }
-
 }
+
 
 run();

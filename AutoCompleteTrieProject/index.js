@@ -47,18 +47,20 @@ class AutoCompleteTrie {
     }
 
     _allWordsHelper(prefix, node, allWords) {
-        if (node.endOfWord == true) {
-            allWords.push(prefix);
-        }
         if (!node) {
             return;
         }
+        if (node.endOfWord == true) {
+            allWords.push(prefix);
+
+        }
+
         for (let ch in node.children)
             this._allWordsHelper(prefix + ch, node.children[ch], allWords)
     }
     predictWords(prefix) {
-        startNode = this._getRemainingTree(prefix, this);
-        allWords = [];
+        let startNode = this._getRemainingTree(prefix, this);
+        let allWords = [];
         this._allWordsHelper(prefix, startNode, allWords);
         return allWords;
 
