@@ -32,4 +32,30 @@ class AutoCompleteTrie {
             return false;
         }
     }
+    _getRemainingTree(prefix, node) {
+        prefix = prefix.toLowerCase();
+        let current = node;
+        for (let ch of prefix) {
+            if (!current.children[ch]) {
+                return null;  // prefix not found
+            }
+            current = current.children[ch];
+        }
+        return current; // node where prefix ends
+    }
+
+    _allWordsHelper(prefix, node, allWords) {
+
+    }
+    predictWords(prefix) {
+
+    }
 }
+
+
+
+
+
+
+
+module.exports = AutoCompleteTrie;
