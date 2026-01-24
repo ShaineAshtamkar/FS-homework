@@ -39,3 +39,27 @@ describe("addWord", () => {
     });
 
 });
+
+
+describe("findWord", () => {
+    test("returns true when the exact word exists in the trie", () => {
+        const trie = new AutoCompleteTrie();
+        trie.addWord("cat");
+
+        expect(trie.findWord("cat")).toBe(true);
+    });
+
+    test("returns false when the word does not exist in the trie", () => {
+        const trie = new AutoCompleteTrie();
+        trie.addWord("cat");
+
+        expect(trie.findWord("dog")).toBe(false);
+    });
+
+    test("returns false when only a prefix exists but not the full word", () => {
+        const trie = new AutoCompleteTrie();
+        trie.addWord("running"); // creates r-u-n... but "run" is NOT marked as a word unless added
+
+        expect(trie.findWord("run")).toBe(false);
+    });
+});
