@@ -57,6 +57,10 @@ class AutoCompleteTrie {
             this._allWordsHelper(prefix + ch, node.children[ch], allWords)
     }
     predictWords(prefix) {
+        startNode = this._getRemainingTree(prefix, this);
+        allWords = [];
+        this._allWordsHelper(prefix, startNode, allWords);
+        return allWords;
 
     }
 }

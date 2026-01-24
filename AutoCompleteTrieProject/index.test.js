@@ -96,3 +96,44 @@ describe("_getRemainingTree", () => {
     });
 });
 
+describe("_allWordsHelper", () => {
+    test("collects all words under a prefix node", () => {
+        const trie = new AutoCompleteTrie();
+        trie.addWord("cat");
+        trie.addWord("car");
+        trie.addWord("card");
+
+        const startNode = trie._getRemainingTree("ca", trie);
+        const allWords = [];
+
+        trie._allWordsHelper("ca", startNode, allWords);
+
+        expect(allWords.sort()).toEqual(["car", "card", "cat"].sort());
+    });
+
+    test("includes the prefix itself if it is a complete word", () => {
+        const trie = new AutoCompleteTrie();
+        trie.addWord("car");
+        trie.addWord("card");
+
+        const startNode = trie._getRemainingTree("car", trie);
+        const allWords = [];
+
+        trie._allWordsHelper("car", startNode, allWords);
+
+        // should include 'car' and also 'card'
+        expect(allWords.sort()).toEqual(["car", "card"].sort());
+    });
+
+    test("returns only one word when the subtree contains only that word", () => {
+        const trie = new AutoCompleteTrie();
+        trie.addWord("dog");
+
+        const startNode = trie._getRemainingTree("do", trie);
+        const allWords = [];
+
+        trie._allWordsHelper("do", startNode, allWords);
+
+        expect(allWords).toEqual(["dog"]);
+    });
+});
