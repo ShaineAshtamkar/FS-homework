@@ -1,0 +1,62 @@
+class AutoCompleteTrie {
+    constructor(value = "") {
+        this.value = value;
+        this.children = {};
+        this.endOfWord = false;
+    }
+
+    addWord(word) {
+        word = word.toLowerCase();
+        let current = this;
+        for (let ch of word) {
+            if (!current.children[ch]) {
+                current.children[ch] = new AutoCompleteTrie(ch);
+            }
+            current = current.children[ch];
+        }
+        current.endOfWord = true;
+    }
+
+    findWord(word) {
+        word = word.toLowerCase();
+        let current = this;
+        for (let ch of word) {
+            if (!current.children[ch]) return false;
+            current = current.children[ch];
+        }
+        return current.endOfWord;
+    }
+
+    _getRemainingTree(prefix, node) {
+        prefix = prefix.toLowerCase();
+        let current = node;
+        for (let ch of prefix) {
+            if (!current.children[ch]) return null;
+            current = current.children[ch];
+        }
+        return current;
+    }
+
+    _allWordsHelper(prefix, node, allWords) {
+        if (!node) return;
+
+        if (node.endOfWord) {
+            allWords.push(prefix);
+        }
+
+        for (let ch in node.children) {
+            this._allWordsHelper(prefix + ch, node.children[ch], allWords);
+        }
+    }
+
+    predictWords(prefix) {
+        let startNode = this._getRemainingTree(prefix, this);
+        let allWords = [];
+        this._allWordsHelper(prefix, startNode, allWords);
+        return allWords;
+    }
+}
+
+export default AutoCompleteTrie;
+
+

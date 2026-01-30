@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoComplete Trie Web UI</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        input {
+            padding: 10px;
+            margin: 8px 0;
+            width: 320px;
+        }
+
+        button {
+            padding: 10px 14px;
+            margin-left: 8px;
+        }
+
+        #msg {
+            margin: 35px 0;
+        }
+
+        .search-wrap {
+            position: relative;
+
+        }
+
+        #suggestions {
+            position: absolute;
+            background: white;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>AutoComplete Trie</h2>
+    <input id="add-input" placeholder="Enter a word to add to dictionary" />
+    <button id="add-btn">Add Word</button>
+
+    <div id="msg"></div>
+
+    <div class="search-wrap">
+        <input id="search-input" placeholder="Start typing to see suggestions..." />
+        <div id="suggestions"></div>
+    </div>
+
+    <h1 id="count">0</h1>
+    <p>Words in Dictionary</p>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
