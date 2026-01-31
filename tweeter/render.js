@@ -72,33 +72,33 @@ const Renderer = function () {
 
         posts.forEach(p => {
 
-            const $postDiv = $("<div>")
+            const $post = $("<div>")
                 .addClass("post")
                 .attr("data-id", p.id)
 
-            const $postTextDiv = $("<div>")
+            const $postText = $("<div>")
                 .addClass("post-text")
                 .text(p.text)
 
-            const $deletePostDiv = $("<div>")
-                .addClass("delete")
-                .attr("data-id", p.id)
-                .text("Delete Post")
-
-            const $commentsDiv = $("<div>").addClass("comments")
+            const $comments = $("<div>")
+                .addClass("comments")
 
             p.comments.forEach(c => {
-                const $commentDiv = $("<div>")
-                    .addClass("comment")
-                    .attr("data-id", c.id)
-                    .text(c.text)
+                const $commentLine = $("<div>")
+                    .addClass("comment-line")
 
-                const $deleteCommentDiv = $("<div>")
+                const $deleteComment = $("<span>")
                     .addClass("delete-comment")
                     .attr("data-id", c.id)
                     .text("X")
 
-                $commentsDiv.append($commentDiv, $deleteCommentDiv)
+                const $commentText = $("<span>")
+                    .addClass("comment")
+                    .attr("data-id", c.id)
+                    .text(" " + c.text)
+
+                $commentLine.append($deleteComment, $commentText)
+                $comments.append($commentLine)
             })
 
             const $commentInput = $("<input>")
@@ -110,15 +110,21 @@ const Renderer = function () {
                 .addClass("comment-button")
                 .text("Comment")
 
-            $postDiv.append(
-                $postTextDiv,
-                $deletePostDiv,
-                $commentsDiv,
-                $commentInput,
-                $commentButton
-            )
 
-            $postsContainer.append($postDiv)
+            const $deletePost = $("<button>")
+                .addClass("delete")
+                .attr("data-id", p.id)
+                .text("Delete Post")
+
+            $post.append($postText,
+                $comments,
+                $commentInput,
+                $commentButton,
+                $deletePost)
+
+
+            $postsContainer.append($post)
+
         })
     }
 
