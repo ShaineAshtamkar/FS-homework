@@ -1,4 +1,4 @@
-class RUPGView {
+export class RUPGView {
     constructor() {
         // Banner
         this.profilePhoto = document.querySelector(".profile-photo");
@@ -51,12 +51,29 @@ class RUPGView {
         // About me
         this.aboutText.textContent = data.aboutMe;
 
+        // Friends
+        this.friendsList.innerHTML = "";
+        data.friends.forEach((f) => {
+            const li = document.createElement("li");
+            li.textContent = `${f.firstName} ${f.lastName}`;
+            this.friendsList.appendChild(li);
+        })
     }
 
+    showError(message) {
+        this.quoteText.textContent = message;
+        this.quoteAuthor.textContent = "";
 
+        this.pokemonName.textContent = "";
+        this.aboutText.textContent = "";
+        this.friendsList.innerHTML = "";
+    }
 }
 
-module.exports = { RUPGView };
+
+
+
+
 
 
 

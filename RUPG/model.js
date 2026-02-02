@@ -1,4 +1,4 @@
-class RUPGApi {
+export class RUPGApi {
     async fetchJson(url) {
         const req = await fetch(url);
         if (!req.ok) throw new Error(`Request failed: ${req.status}`);
@@ -23,4 +23,3 @@ class RUPGApi {
     }
 
 }
-module.exports = { RUPGApi };
