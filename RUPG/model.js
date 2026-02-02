@@ -1,4 +1,4 @@
-export class RUPGApi {
+class RUPGApi {
     async fetchJson(url) {
         const req = await fetch(url);
         if (!req.ok) throw new Error(`Request failed: ${req.status}`);
@@ -14,6 +14,7 @@ export class RUPGApi {
     async getRandomPokemon(maxPokemonId = 1025) {
         const id = Math.floor(Math.random() * maxPokemonId) + 1;
         return this.fetchJson(`https://pokeapi.co/api/v2/pokemon/${id}`);
+
     }
     async getBaconText() {
         return this.fetchJson(
@@ -22,3 +23,4 @@ export class RUPGApi {
     }
 
 }
+module.exports = { RUPGApi };

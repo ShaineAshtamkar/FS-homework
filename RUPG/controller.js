@@ -1,5 +1,8 @@
-import { RUPGApi } from "./model.js";
-import { RUPGView } from "./view.js";
+
+const { RUPGApi } = require("./model");
+const { RUPGView } = require("./view");
+
+
 class RUPGController {
     constructor(api, view) {
         this.api = api;
@@ -20,7 +23,10 @@ class RUPGController {
             this.api.getKanyeQuote(),
             this.api.getRandomPokemon(1025),
             this.api.getBaconText(),
+
         ])
+        console.log(pokemonReq);
+
         const users = usersReq.results;
         const main = users[0];
         const friends = users.slice(1);
@@ -37,10 +43,24 @@ class RUPGController {
                 firstName: u.name.first,
                 lastName: u.name.last,
             })),
-            quote: { text: quoteRes.quote, author: "Kanye West" },
+            quote: { text: quoteReq.quote, author: "Kanye West" },
+            pokemon: {
+                name: pokemonReq.name,
+                image:
+                    pokemonReq.sprites?.other?.["official-artwork"]?.front_default ||
+                    pokemonReq.sprites?.front_default ||
+                    "",
+            },
+            aboutMe: baconRes[0]
 
         }
+        this.view.renderPage(data);
+
 
 
     }
+
 }
+
+new RUPGController();
+module.exports = { RUPGController };
