@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef1f2;
+    color: #1a1a1a;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+}
+
+.main {
+    flex: 1;
+    padding-bottom: 90px;
+    /* room for bottom buttons */
+    margin: 14px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+
+}
+
+.banner {
+    background: #2f95d5;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+}
+
+.profile-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #d9d9d9;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.friends {
+    width: 240px;
+    background: #2f95d5;
+    color: white;
+    padding: 16px 12px;
+
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#user-location {
+    margin-top: 4px;
+    font-size: 14px;
+    opacity: 0.95;
+}
